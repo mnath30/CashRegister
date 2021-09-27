@@ -31,11 +31,16 @@ function calculateChange(paidAmount,billAmount){
 }
 
 function printMessage(message){
-    result.innerHTML=`<h2>${message}</h2>`;
+    result.innerText=`${message}`;
 }
 
-function createRowData(dataarray){
+function createRowData(heading,dataarray){
         var row=document.createElement("tr");
+        var cellheader=document.createElement("th");
+        var headerdata=document.createTextNode(heading);
+        cellheader.appendChild(headerdata);
+        row.appendChild(cellheader);
+
         for(j=0;j<dataarray.length;j++){
             var cell=document.createElement("td");
             var data=document.createTextNode(dataarray[j]);
@@ -49,18 +54,19 @@ function createRowData(dataarray){
 function printReturnChange(paidAmount,billAmount){
     result.innerHTML="";
     var resultarray=calculateChange(paidAmount,billAmount);
-    var header=document.createElement("h3");
+    var header=document.createElement("div");
     var headertext=document.createTextNode("Return Change");
     header.appendChild(headertext);
     result.appendChild(header); 
     var table=document.createElement("table");   
     var tbody=document.createElement("tbody");
-    var row1=createRowData(resultarray);
-    var row2=createRowData(notes);
+    var row1=createRowData("No. of Notes",resultarray);
+    var row2=createRowData("Notes",notes);
     tbody.appendChild(row1);
     tbody.appendChild(row2);
     table.appendChild(tbody);
     result.appendChild(table);
+    table.classList.add("table");
 
 }
 
