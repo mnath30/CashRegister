@@ -66,15 +66,13 @@ button:hover{
     background-color: var(--purple);
 }
 .result{
-    font-size: 1.5rem;
-    padding:0.4rem;
     margin:1rem auto;
+    font-size: larger;
 }
 table,th,td {
     border:2px solid var(--dark-purple);
     border-collapse:collapse;
-    text-align: center;
-    margin: auto;
+    
 }
 td{
     padding:0.4rem;

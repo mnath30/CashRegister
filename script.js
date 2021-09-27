@@ -32,6 +32,7 @@ function calculateChange(paidAmount,billAmount){
 
 function printMessage(message){
     result.innerText=`${message}`;
+    result.style.fontSize="1.3rem";
 }
 
 function createRowData(heading,dataarray){
@@ -65,8 +66,9 @@ function printReturnChange(paidAmount,billAmount){
     tbody.appendChild(row1);
     tbody.appendChild(row2);
     table.appendChild(tbody);
-    result.appendChild(table);
     table.classList.add("table");
+    result.appendChild(table);
+    
 
 }
 
